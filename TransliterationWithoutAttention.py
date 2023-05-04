@@ -19,6 +19,9 @@ import torch.nn as nn
 df = pd.read_csv('H:/My Drive/Courses/Jan-May 2023/Deep_Learning/Assignment 3/aksharantar_sampled/aksharantar_sampled/hin/hin_train.csv')
 df.columns = ['English', 'Hindi']
 
+device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+print(device)
+
 
 SOS_token = 0
 EOS_token = 1
@@ -189,7 +192,7 @@ import torch.optim as optim
 
 def train(input_tensor, target_tensor, encoder, decoder,
              encoder_optimizer, decoder_optimizer, criterion,
-             teacher_forcing = True):
+             teacher_forcing = True, lang = hindi, verbose = False):
     
     encoder_hidden = encoder.initHidden()
     
@@ -207,17 +210,21 @@ def train(input_tensor, target_tensor, encoder, decoder,
     
     decoder_hidden = encoder_hidden #Size = (1, 1)
     
+    predicted_output = []
     
     if teacher_forcing:
         
         for i in range(target_length):
             
             decoder_output, decoder_hidden = decoder(decoder_input, decoder_hidden)
+            topv, topi = decoder_output.topk(1)
+            predicted_output.append(topi.squeeze().detach().item())
             loss += criterion(decoder_output, target_tensor[i].view(1))
             decoder_input = target_tensor[i].view(1)
             
     else:
     
+        
         for i in range(target_length):
             decoder_output, decoder_hidden = decoder(decoder_input, decoder_hidden)
             # Extract the predicted letters.
@@ -229,18 +236,41 @@ def train(input_tensor, target_tensor, encoder, decoder,
             # print('target_tensor shape', target_tensor[i].view(1).shape)
             # print('target_tensor', target_tensor[i])
             loss += criterion(decoder_output, target_tensor[i].view(1))
+            predicted_output.append(decoder_input.item())
             if decoder_input.item() == EOS_token:
                 break
     
-    loss.backward()
+    #print(target_tensor)
+    
+    if verbose:
+        true_hindi_word = [lang.index2letter[elements.item()] for elements in target_tensor]
+        predicted_hindi_word = [lang.index2letter[elements] for elements in predicted_output]
+        print(len(true_hindi_word), len(predicted_hindi_word))
+        true_hindi_word = ''.join(true_hindi_word)
+        predicted_hindi_word = ''.join(predicted_hindi_word)
+        print(true_hindi_word, predicted_hindi_word)
+        
+    
+    predicted_output = torch.tensor(predicted_output)
+    
+    if all( predicted_output == target_tensor):
+        word_accuracy = 1
+    else:
+        word_accuracy = 0
+        
+    
+    loss.backward()  
+    
+    #print(predicted_output)
     
     encoder_optimizer.step()
     decoder_optimizer.step()
     
-    return loss.item()/target_length
+    return loss.item()/target_length, word_accuracy
 
 import matplotlib.pyplot as plt
 
+from tqdm import tqdm
 def trainiter(encoder, decoder, n_iters, print_every = 1000, plot_every = 100,
               learning_rate = 0.01, epochs = 5):
     
@@ -252,39 +282,51 @@ def trainiter(encoder, decoder, n_iters, print_every = 1000, plot_every = 100,
     decoder_optimizer = optim.SGD(decoder.parameters(), lr = learning_rate)
     criterion = nn.NLLLoss()
     
-    for j in range(epochs):
+    accuracy = []
+    for j in tqdm(range(epochs)):
         
         teacher_forcing = True if j/epochs < 0.5 else False
         
+        word_accuracy = 0
         for i in range(n_iters):
             
             # Extract the words from the dataframe. 
             input_tensor, target_tensor = df1.iloc[i, 2:].values
+            input_tensor, target_tensor = input_tensor.to(device), target_tensor.to(device)
             
             # Calculate loss per words and update parameters per word
-            loss = train(input_tensor, target_tensor, encoder, decoder,
+            loss, predict_indicator = train(input_tensor, target_tensor, encoder, decoder,
                          encoder_optimizer, decoder_optimizer, criterion,
                          teacher_forcing)
+            word_accuracy += predict_indicator
             
             print_loss_total += loss
             plot_loss_total += loss
             
-            if i % print_every == 0:
-                print_loss_avg = print_loss_total/ print_every
-                print_loss_total = 0
-                print(f'Loss at {i}: {print_loss_avg}')
-                
-            if i % plot_every == 0:
-                plot_loss_avg = plot_loss_total/plot_every
-                plot_losses.append(plot_loss_avg)
-                plot_loss_total = 0
+            # if i % print_every == 0:
+            #     print_loss_avg = print_loss_total/ print_every
+            #     print_loss_total = 0
+            #     print(f'Loss at {i}: {print_loss_avg}')
         
-        plt.plot(plot_losses)
+        word_accuracy = word_accuracy/ n_iters
+        
+        accuracy.append(word_accuracy)
+        
+    #plt.plot(accuracy)
+    print('Accuracy:', accuracy)
+                
+            # if i % plot_every == 0:
+            #     plot_loss_avg = plot_loss_total/plot_every
+            #     plot_losses.append(plot_loss_avg)
+            #     plot_loss_total = 0
+        
+        # plt.plot(plot_losses)
     
     
     
-encoder = EncoderRNN(english.n_letters, 16)
-decoder = DecoderRNN(16, hindi.n_letters)
+encoder = EncoderRNN(english.n_letters, 16).to(device)
+decoder = DecoderRNN(16, hindi.n_letters).to(device)
+
 
 n = df1.shape[0]
 
