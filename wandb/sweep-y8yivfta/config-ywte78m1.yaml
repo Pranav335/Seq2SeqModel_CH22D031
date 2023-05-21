@@ -1,0 +1,18 @@
+wandb_version: 1
+
+bid:
+  value: true
+cell_type:
+  value: RNN
+dropout:
+  value: 0.5
+embedding_size:
+  value: 100
+epoch:
+  value: 20
+hidden_size:
+  value: 128
+lr:
+  value: 0.001
+num_layer:
+  value: 2

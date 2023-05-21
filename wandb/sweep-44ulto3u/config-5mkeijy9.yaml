@@ -1,0 +1,18 @@
+wandb_version: 1
+
+bid:
+  value: true
+cell_type:
+  value: GRU
+dropout:
+  value: 0
+embedding_size:
+  value: 128
+epoch:
+  value: 1
+hidden_size:
+  value: 128
+lr:
+  value: 0.0001
+num_layer:
+  value: 3

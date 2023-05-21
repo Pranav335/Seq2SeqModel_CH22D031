@@ -1,0 +1,25 @@
+2023-05-16 02:45:11,683 INFO    Thread-7  :220979 [wandb_setup.py:_flush():76] Configure stats pid to 220979
+2023-05-16 02:45:11,683 INFO    Thread-7  :220979 [wandb_setup.py:_flush():76] Loading settings from /home/asus/.config/wandb/settings
+2023-05-16 02:45:11,683 INFO    Thread-7  :220979 [wandb_setup.py:_flush():76] Loading settings from /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/settings
+2023-05-16 02:45:11,683 INFO    Thread-7  :220979 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'project': 'Assignment-3', 'entity': 'pranav_', 'root_dir': '/home/asus/Pranav_Folder/Seq2SeqModel_CH22D031', 'run_id': 'kj8flphx', 'sweep_param_path': '/home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/sweep-0xvj3mdl/config-kj8flphx.yaml', 'sweep_id': '0xvj3mdl'}
+2023-05-16 02:45:11,683 INFO    Thread-7  :220979 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-05-16 02:45:11,683 INFO    Thread-7  :220979 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'batching_with_accuracy.py', 'program': 'batching_with_accuracy.py'}
+2023-05-16 02:45:11,683 INFO    Thread-7  :220979 [wandb_init.py:_log_setup():507] Logging user logs to /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230516_024511-kj8flphx/logs/debug.log
+2023-05-16 02:45:11,683 INFO    Thread-7  :220979 [wandb_init.py:_log_setup():508] Logging internal logs to /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230516_024511-kj8flphx/logs/debug-internal.log
+2023-05-16 02:45:11,683 INFO    Thread-7  :220979 [wandb_init.py:init():547] calling init triggers
+2023-05-16 02:45:11,683 INFO    Thread-7  :220979 [wandb_init.py:init():554] wandb.init called with sweep_config: {'bid': True, 'cell_type': 'LSTM', 'dropout': 0, 'embedding_size': 128, 'epoch': 2, 'hidden_size': 128, 'lr': 0.001, 'num_layer': 3}
+config: {'method': 'random', 'name': 'Loss', 'metric': {'goal': 'maximize', 'name': 'validation_accuracy'}, 'parameters': {'hidden_size': {'values': [128, 256]}, 'num_layer': {'values': [3, 4, 5]}, 'embedding_size': {'values': [128, 256]}, 'cell_type': {'values': ['RNN', 'GRU', 'LSTM']}, 'bid': {'values': [True, False]}, 'dropout': {'values': [0]}, 'epoch': {'values': [2]}, 'lr': {'values': [0.001, 0.0001]}}}
+2023-05-16 02:45:11,683 INFO    Thread-7  :220979 [wandb_init.py:init():595] starting backend
+2023-05-16 02:45:11,683 INFO    Thread-7  :220979 [wandb_init.py:init():599] setting up manager
+2023-05-16 02:45:11,690 INFO    Thread-7  :220979 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-05-16 02:45:11,693 INFO    Thread-7  :220979 [wandb_init.py:init():605] backend started and connected
+2023-05-16 02:45:11,696 INFO    Thread-7  :220979 [wandb_run.py:_config_callback():1285] config_cb None None {'bid': True, 'cell_type': 'LSTM', 'dropout': 0, 'embedding_size': 128, 'epoch': 2, 'hidden_size': 128, 'lr': 0.001, 'num_layer': 3}
+2023-05-16 02:45:11,697 INFO    Thread-7  :220979 [wandb_init.py:init():695] updated telemetry
+2023-05-16 02:45:11,734 INFO    Thread-7  :220979 [wandb_init.py:init():732] communicating run to backend with 60.0 second timeout
+2023-05-16 02:45:12,398 INFO    Thread-7  :220979 [wandb_run.py:_on_init():2176] communicating current version
+2023-05-16 02:45:12,472 INFO    Thread-7  :220979 [wandb_run.py:_on_init():2185] got version response upgrade_message: "wandb version 0.15.2 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-05-16 02:45:12,472 INFO    Thread-7  :220979 [wandb_init.py:init():782] starting run threads in backend
+2023-05-16 02:45:12,635 INFO    Thread-7  :220979 [wandb_run.py:_console_start():2157] atexit reg
+2023-05-16 02:45:12,635 INFO    Thread-7  :220979 [wandb_run.py:_redirect():2012] redirect: SettingsConsole.OFF
+2023-05-16 02:45:12,636 INFO    Thread-7  :220979 [wandb_init.py:init():824] run started, returning control to user process

@@ -13,17 +13,28 @@ import numpy as np
 
 import torch.nn as nn
 
+import pdb
+
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 print(device)
+
 
 # Reading English-Hindi data pairs from aksharantar dataset
 df = pd.read_csv('./hin/hin_train.csv')
 df.columns = ['English', 'Hindi']
 
+# val_data = pd.read_csv('H:/My Drive/Courses/Jan-May 2023/Deep_Learning/Assignment 3/aksharantar_sampled/aksharantar_sampled/hin/hin_val.csv')
+# val_data.columns = ['English', 'Hindi']
+
 PAD_token = 0
 SOS_token = 1
 EOS_token = 2
 
+df['length_Hindi_words'] = df['Hindi'].apply(lambda x: len([*x]))
+df['length_English_words'] = df['English'].apply(lambda x: len([*x]))
+
+
+df = df[(df['length_English_words'] < 15) & (df['length_Hindi_words'] < 14)]
 class Lang:
   '''
   This class add letters from the language to make a dictionary of 
@@ -35,7 +46,7 @@ class Lang:
       self.letter2index = {}
       self.letter2count = {}
       self.index2letter = {}
-      self.index2letter = { 0: "SOS", 1: "EOS"}
+      self.index2letter = { 0: "PAD", 1: "SOS", 2: "EOS"}
       self.n_letters = 3
       self.max_size = 0
 
@@ -45,6 +56,8 @@ class Lang:
           self.max_size = len(word)
       for letter in [*word]:
           self.addLetter(letter)
+          
+          
 
   def addLetter(self, letter):
       if letter not in self.letter2index:
@@ -98,6 +111,8 @@ def dataset(df, lang1 = english, lang2 = hindi):
 
 df1 = dataset(df)
 
+df1.reset_index(inplace = True)
+
 from torch.utils.data import Dataset
 
 class CustomDataset(Dataset):
@@ -111,6 +126,7 @@ class CustomDataset(Dataset):
     def __getitem__(self, idx):
         input_tensor = self.df.loc[idx, 'English Representation']
         target_tensor = self.df.loc[idx, 'Hindi Representation']
+        
         
         return input_tensor, target_tensor
     
@@ -126,19 +142,23 @@ import torch.nn as nn
 
 # Write embedding and check the output dimension of embedding and see the result.
 
-embedding = nn.Embedding(english.n_letters, 120, padding_idx = 0)
-ihat = embedding(i) # output shape == batch x length_sequence x n_embeddings
-ihat = ihat.view(-1, 20, 120)
+#embedding = nn.Embedding(english.n_letters, 120, padding_idx = 0)
+#ihat = embedding(i) # output shape == batch x length_sequence x n_embeddings
+#ihat = ihat.view(-1, 20, 120)
 
 class EncoderRNN(nn.Module):
     
-    def __init__(self, input_size, hidden_size, batch_size, verbose = False):
+    def __init__(self, input_size, hidden_size,
+                 num_layers,
+                 batch_size,
+                 verbose = False):
         super(EncoderRNN, self).__init__()
         self.hidden_size = hidden_size
         self.batch_size = batch_size
-        # input_size = Vocabulary size of the language
+        #input_size = Vocabulary size of the language
         self.embedding = nn.Embedding(input_size, hidden_size)
-        self.gru = nn.GRU(hidden_size, hidden_size)
+        self.gru = nn.GRU(hidden_size, hidden_size, num_layers)
+        self.num_layers = num_layers
         self.verbose = verbose
     
     def forward(self, input, hidden):
@@ -155,8 +175,8 @@ class EncoderRNN(nn.Module):
         if self.verbose == True:
             print(f'Embedding Shape: {embedded.shape}')
         output, hidden = self.gru(output, hidden)
-        # Size of output = (L x 1 x hidden_size)
-        # Size of hidden = (1 x 1 x hidden_size)
+        # Size of output = (L x batch_size x hidden_size)
+        # Size of hidden = (1 x batch_size x hidden_size)
         
         if self.verbose == True:
             print('Shape of Input:', input.shape)
@@ -166,20 +186,22 @@ class EncoderRNN(nn.Module):
         return output, hidden
     
     def initHidden(self):
-        return torch.zeros(1, self.batch_size, self.hidden_size, device = device)
+        return torch.zeros(self.num_layers, self.batch_size, self.hidden_size, device = device)
     
 class DecoderRNN(nn.Module):
     
     def __init__(self, hidden_size, output_size,
+                 num_layers,
                  batch_size, verbose = True):
         
         super(DecoderRNN, self).__init__()
         self.hidden_size = hidden_size
         self.embedding = nn.Embedding(output_size, hidden_size)
         self.relu = nn.ReLU()
-        self.gru = nn.GRU(hidden_size, hidden_size)
+        self.gru = nn.GRU(hidden_size, hidden_size, num_layers)
         self.out = nn.Linear(hidden_size, output_size)
         self.softmax = nn.LogSoftmax(dim = 1)
+        self.num_layers = num_layers
         self.verbose = verbose
         self.batch_size = batch_size
         
@@ -204,7 +226,7 @@ class DecoderRNN(nn.Module):
         return output, hidden
     
     def initHidden(self):
-        return torch.zeros(1, self.batch_size, self.hidden_size, device = device)
+        return torch.zeros(self.num_layers, self.batch_size, self.hidden_size, device = device)
     
 import torch.optim as optim
 
@@ -220,7 +242,7 @@ def train(input_tensor, target_tensor, encoder, decoder,
     decoder_optimizer.zero_grad()
     
     #input_length = input_tensor.size(0) # L x 1 x features
-    target_length = target_tensor.size(0) # L x 1 x features
+    target_length = target_tensor.size(1) # L x 1 x features
     
     encoder_output, encoder_hidden = encoder(input_tensor, encoder_hidden)
     
@@ -229,7 +251,7 @@ def train(input_tensor, target_tensor, encoder, decoder,
     decoder_hidden = encoder_hidden #Size = (1, 1)
     
     predicted_output = torch.zeros(target_tensor.shape[0],
-                                    target_tensor.shape[1], dtype = torch.long, 
+                                   target_tensor.shape[1], dtype = torch.long, 
                                    device = device)
     
 
@@ -239,9 +261,10 @@ def train(input_tensor, target_tensor, encoder, decoder,
         decoder_output, decoder_hidden = decoder(decoder_input, decoder_hidden)
         topv, topi = decoder_output.topk(1)
         predicted_output[:, i: i+1] = topi
+        #pdb.set_trace()
         loss += criterion(decoder_output, target_tensor[:, i])
         if teacher_forcing:
-          decoder_input = target_tensor[:, 1]
+          decoder_input = target_tensor[:, i]
         else:
           decoder_input = topi
             
@@ -249,8 +272,9 @@ def train(input_tensor, target_tensor, encoder, decoder,
     #print(target_tensor)
     
     if verbose:
-        true_hindi_word = [lang.index2letter[elements.item()] for elements in target_tensor]
-        predicted_hindi_word = [lang.index2letter[elements] for elements in predicted_output]
+        #pdb.set_trace()
+        true_hindi_word = [lang.index2letter[elements.item()] for elements in target_tensor[0, :]]
+        predicted_hindi_word = [lang.index2letter[elements.item()] for elements in predicted_output[0, :]]
         print(len(true_hindi_word), len(predicted_hindi_word))
         true_hindi_word = ''.join(true_hindi_word)
         predicted_hindi_word = ''.join(predicted_hindi_word)
@@ -264,24 +288,25 @@ def train(input_tensor, target_tensor, encoder, decoder,
     
     word_accuracy = predicted_output == target_tensor
     word_accuracy = sum(torch.all(word_accuracy, dim = 1)).item()
+    letter_accuracy = torch.sum(predicted_output == target_tensor)
     
     #print(predicted_output)
     
     encoder_optimizer.step()
     decoder_optimizer.step()
     
-    return loss.item(), word_accuracy
+    return loss.item(), word_accuracy, letter_accuracy
 
 import matplotlib.pyplot as plt
 
 from tqdm import tqdm
 def trainiter(encoder, decoder, dataloader, n,
-              learning_rate = 0.0001, epochs = 30):
+              learning_rate = 0.001, epochs = 30):
     
     
     
-    encoder_optimizer = optim.SGD(encoder.parameters(), lr = learning_rate)
-    decoder_optimizer = optim.SGD(decoder.parameters(), lr = learning_rate)
+    encoder_optimizer = optim.Adam(encoder.parameters(), lr = learning_rate)
+    decoder_optimizer = optim.Adam(decoder.parameters(), lr = learning_rate)
     criterion = nn.NLLLoss()
     
     accuracy = []
@@ -289,7 +314,7 @@ def trainiter(encoder, decoder, dataloader, n,
         
         teacher_forcing = True if j/epochs < 0.5 else False
         epoch_loss = 0
-        
+        letter_accuracy = 0
         word_accuracy = 0
         for input_tensor, target_tensor in dataloader:
             
@@ -298,14 +323,17 @@ def trainiter(encoder, decoder, dataloader, n,
             
             # Calculate loss per words and update parameters per word
           
-            loss, predict_indicator = train(input_tensor, target_tensor, encoder, decoder,
-                            encoder_optimizer, decoder_optimizer, criterion,
-                            teacher_forcing)
+            loss, predict_indicator, letter_indicator = train(input_tensor,
+                                                              target_tensor, encoder,
+                                                              decoder,
+                                                              encoder_optimizer,
+                                                              decoder_optimizer, criterion,
+                                                              teacher_forcing)
            
 
             word_accuracy += predict_indicator
             epoch_loss += loss
-            
+            letter_accuracy += letter_indicator
             
             
             # if i % print_every == 0:
@@ -316,7 +344,7 @@ def trainiter(encoder, decoder, dataloader, n,
       
         
         epoch_loss /= 52000
-        print(f'Epoch {j}====Word Accuracy: {word_accuracy}, Loss:  {epoch_loss}')
+        print(f'Epoch {j}====Word Accuracy: {word_accuracy}, Loss:  {epoch_loss} Letter Accuracy: {letter_accuracy}')
         
         accuracy.append(word_accuracy)
         
@@ -325,11 +353,14 @@ def trainiter(encoder, decoder, dataloader, n,
                 
 
     
-    
 hidden_layer_size = 128
 batch_size = 20
-encoder = EncoderRNN(english.n_letters, hidden_layer_size, batch_size, verbose = False).to(device)
-decoder = DecoderRNN(hidden_layer_size, hindi.n_letters, batch_size, verbose = False).to(device)
+num_layers = 4
+    
+encoder = EncoderRNN(english.n_letters, hidden_layer_size,num_layers,
+                     batch_size, verbose = False).to(device)
+decoder = DecoderRNN(hidden_layer_size, hindi.n_letters,num_layers, 
+                     batch_size, verbose = False).to(device)
 
 
 n = df1.shape[0]

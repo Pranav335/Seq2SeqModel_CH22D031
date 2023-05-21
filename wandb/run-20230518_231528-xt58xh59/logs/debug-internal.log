@@ -1,0 +1,195 @@
+2023-05-18 23:15:28,557 INFO    StreamThr :28081 [internal.py:wandb_internal():86] W&B internal server running at pid: 28081, started at: 2023-05-18 23:15:28.556916
+2023-05-18 23:15:28,567 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: status
+2023-05-18 23:15:28,596 INFO    WriterThread:28081 [datastore.py:open_for_write():85] open: /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/run-xt58xh59.wandb
+2023-05-18 23:15:28,596 DEBUG   SenderThread:28081 [sender.py:send():375] send: header
+2023-05-18 23:15:28,639 DEBUG   SenderThread:28081 [sender.py:send():375] send: run
+2023-05-18 23:15:29,320 INFO    SenderThread:28081 [dir_watcher.py:__init__():219] watching files in: /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/files
+2023-05-18 23:15:29,321 INFO    SenderThread:28081 [sender.py:_start_run_threads():1124] run started: xt58xh59 with start time 1684431928.568388
+2023-05-18 23:15:29,321 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: summary_record
+2023-05-18 23:15:29,321 INFO    SenderThread:28081 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-18 23:15:29,324 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: check_version
+2023-05-18 23:15:29,324 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: check_version
+2023-05-18 23:15:29,617 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: run_start
+2023-05-18 23:15:29,638 DEBUG   HandlerThread:28081 [system_info.py:__init__():31] System info init
+2023-05-18 23:15:29,639 DEBUG   HandlerThread:28081 [system_info.py:__init__():46] System info init done
+2023-05-18 23:15:29,639 INFO    HandlerThread:28081 [system_monitor.py:start():181] Starting system monitor
+2023-05-18 23:15:29,639 INFO    SystemMonitor:28081 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-18 23:15:29,639 INFO    HandlerThread:28081 [system_monitor.py:probe():201] Collecting system info
+2023-05-18 23:15:29,640 INFO    SystemMonitor:28081 [interfaces.py:start():190] Started cpu monitoring
+2023-05-18 23:15:29,645 INFO    SystemMonitor:28081 [interfaces.py:start():190] Started disk monitoring
+2023-05-18 23:15:29,645 INFO    SystemMonitor:28081 [interfaces.py:start():190] Started gpu monitoring
+2023-05-18 23:15:29,646 INFO    SystemMonitor:28081 [interfaces.py:start():190] Started memory monitoring
+2023-05-18 23:15:29,647 INFO    SystemMonitor:28081 [interfaces.py:start():190] Started network monitoring
+2023-05-18 23:15:29,723 DEBUG   HandlerThread:28081 [system_info.py:probe():195] Probing system
+2023-05-18 23:15:29,741 DEBUG   HandlerThread:28081 [system_info.py:_probe_git():180] Probing git
+2023-05-18 23:15:29,761 DEBUG   HandlerThread:28081 [system_info.py:_probe_git():188] Probing git done
+2023-05-18 23:15:29,761 DEBUG   HandlerThread:28081 [system_info.py:probe():240] Probing system done
+2023-05-18 23:15:29,761 DEBUG   HandlerThread:28081 [system_monitor.py:probe():210] {'os': 'Linux-5.15.0-72-generic-x86_64-with-glibc2.29', 'python': '3.8.10', 'heartbeatAt': '2023-05-18T17:45:29.723592', 'startedAt': '2023-05-18T17:45:28.540572', 'docker': None, 'cuda': None, 'args': ('-s', '0'), 'state': 'running', 'program': 'batching_with_accuracy.py', 'codePath': 'batching_with_accuracy.py', 'git': {'remote': 'https://github.com/Pranav335/Seq2SeqModel_CH22D031.git', 'commit': '4df726bccfc5526828f6fd519925d4ca80dbced8'}, 'email': 'pranavagrawal335@gmail.com', 'root': '/home/asus/Pranav_Folder/Seq2SeqModel_CH22D031', 'host': 'senaicluster', 'username': 'asus', 'executable': '/usr/bin/python3', 'cpu_count': 64, 'cpu_count_logical': 128, 'cpu_freq': {'current': 2865.0663281250004, 'min': 1500.0, 'max': 2450.0}, 'cpu_freq_per_core': [{'current': 3094.497, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.374, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.25, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.493, 'min': 1500.0, 'max': 2450.0}, {'current': 3077.812, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.371, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.494, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.117, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.382, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.241, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.268, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.239, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.367, 'min': 1500.0, 'max': 2450.0}, {'current': 3070.952, 'min': 1500.0, 'max': 2450.0}, {'current': 3054.992, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.856, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.499, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.496, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.367, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.365, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.37, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.496, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.277, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.495, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.109, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.238, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.977, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.495, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.271, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.099, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.971, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.496, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.228, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.097, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.099, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.098, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.696, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.229, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.095, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.822, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.957, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.36, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.494, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.493, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.496, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.496, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.495, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.357, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.489, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.803, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.082, 'min': 1500.0, 'max': 2450.0}, {'current': 3068.824, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.499, 'min': 1500.0, 'max': 2450.0}, {'current': 3068.235, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.213, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.03, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.376, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.05, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.498, 'min': 1500.0, 'max': 2450.0}, {'current': 3075.187, 'min': 1500.0, 'max': 2450.0}, {'current': 3067.869, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.494, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.495, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.27, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.499, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.357, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.21, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.497, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.062, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.209, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.495, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.206, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.914, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.302, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.492, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.495, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.204, 'min': 1500.0, 'max': 2450.0}, {'current': 3088.064, 'min': 1500.0, 'max': 2450.0}, {'current': 3087.834, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.165, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.491, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.493, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.196, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.17, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.196, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.194, 'min': 1500.0, 'max': 2450.0}, {'current': 2450.0, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.496, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.896, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.195, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.892, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.5, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.495, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.49, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.885, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.498, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.313, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.88, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.032, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.204, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.721, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.185, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.183, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.03, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.871, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.18, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.496, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.496, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.495, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.494, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.498, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.174, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.492, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.844, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.007, 'min': 1500.0, 'max': 2450.0}, {'current': 3066.663, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.679, 'min': 1500.0, 'max': 2450.0}, {'current': 3093.941, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.162, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.16, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.327, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.494, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.498, 'min': 1500.0, 'max': 2450.0}, {'current': 2907.203, 'min': 1500.0, 'max': 2450.0}, {'current': 3063.22, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.204, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.494, 'min': 1500.0, 'max': 2450.0}, {'current': 3094.157, 'min': 1500.0, 'max': 2450.0}], 'disk': {'total': 809.6658172607422, 'used': 490.49735260009766}, 'gpu': 'NVIDIA RTX A6000', 'gpu_count': 4, 'gpu_devices': [{'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}], 'memory': {'total': 125.63891220092773}}
+2023-05-18 23:15:29,762 INFO    HandlerThread:28081 [system_monitor.py:probe():211] Finished collecting system info
+2023-05-18 23:15:29,762 INFO    HandlerThread:28081 [system_monitor.py:probe():214] Publishing system info
+2023-05-18 23:15:29,762 DEBUG   HandlerThread:28081 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-05-18 23:15:29,762 DEBUG   HandlerThread:28081 [system_info.py:_save_pip():67] Saving pip packages done
+2023-05-18 23:15:29,764 INFO    HandlerThread:28081 [system_monitor.py:probe():216] Finished publishing system info
+2023-05-18 23:15:29,766 DEBUG   SenderThread:28081 [sender.py:send():375] send: files
+2023-05-18 23:15:29,766 INFO    SenderThread:28081 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-05-18 23:15:29,783 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-18 23:15:29,783 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: stop_status
+2023-05-18 23:15:30,065 DEBUG   SenderThread:28081 [sender.py:send():375] send: telemetry
+2023-05-18 23:15:30,065 DEBUG   SenderThread:28081 [sender.py:send():375] send: telemetry
+2023-05-18 23:15:30,065 DEBUG   SenderThread:28081 [sender.py:send():375] send: run
+2023-05-18 23:15:30,322 INFO    Thread-12 :28081 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/files/config.yaml
+2023-05-18 23:15:30,323 INFO    Thread-12 :28081 [dir_watcher.py:_on_file_created():278] file/dir created: /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/files/requirements.txt
+2023-05-18 23:15:30,323 INFO    Thread-12 :28081 [dir_watcher.py:_on_file_created():278] file/dir created: /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/files/wandb-metadata.json
+2023-05-18 23:15:30,323 INFO    Thread-12 :28081 [dir_watcher.py:_on_file_created():278] file/dir created: /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/files/wandb-summary.json
+2023-05-18 23:15:30,393 INFO    SenderThread:28081 [sender.py:send_run():1002] updated run: xt58xh59
+2023-05-18 23:15:30,676 INFO    wandb-upload_0:28081 [upload_job.py:push():137] Uploaded file /tmp/tmpz2124alswandb/4aiyzl2r-wandb-metadata.json
+2023-05-18 23:15:34,394 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: status_report
+2023-05-18 23:15:39,395 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: status_report
+2023-05-18 23:15:44,396 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: status_report
+2023-05-18 23:15:44,783 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-18 23:15:44,783 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: stop_status
+2023-05-18 23:15:50,047 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: status_report
+2023-05-18 23:15:55,048 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: status_report
+2023-05-18 23:15:59,783 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-18 23:15:59,784 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: stop_status
+2023-05-18 23:16:00,077 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: status_report
+2023-05-18 23:16:03,336 INFO    Thread-12 :28081 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/files/config.yaml
+2023-05-18 23:16:07,338 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: status_report
+2023-05-18 23:16:12,339 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: status_report
+2023-05-18 23:16:14,783 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-18 23:16:14,784 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: stop_status
+2023-05-18 23:16:18,085 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: status_report
+2023-05-18 23:16:23,086 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: status_report
+2023-05-18 23:16:28,086 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: status_report
+2023-05-18 23:16:28,434 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: partial_history
+2023-05-18 23:16:28,436 DEBUG   SenderThread:28081 [sender.py:send():375] send: history
+2023-05-18 23:16:28,436 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: summary_record
+2023-05-18 23:16:28,438 INFO    SenderThread:28081 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-18 23:16:28,438 DEBUG   SenderThread:28081 [sender.py:send():375] send: telemetry
+2023-05-18 23:16:28,438 DEBUG   SenderThread:28081 [sender.py:send():375] send: exit
+2023-05-18 23:16:28,438 INFO    SenderThread:28081 [sender.py:send_exit():598] handling exit code: 0
+2023-05-18 23:16:28,439 INFO    SenderThread:28081 [sender.py:send_exit():600] handling runtime: 58
+2023-05-18 23:16:28,439 INFO    SenderThread:28081 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-18 23:16:28,439 INFO    SenderThread:28081 [sender.py:send_exit():606] send defer
+2023-05-18 23:16:28,439 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: defer
+2023-05-18 23:16:28,439 INFO    HandlerThread:28081 [handler.py:handle_request_defer():170] handle defer: 0
+2023-05-18 23:16:28,440 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: defer
+2023-05-18 23:16:28,440 INFO    SenderThread:28081 [sender.py:send_request_defer():622] handle sender defer: 0
+2023-05-18 23:16:28,440 INFO    SenderThread:28081 [sender.py:transition_state():626] send defer: 1
+2023-05-18 23:16:28,440 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: defer
+2023-05-18 23:16:28,440 INFO    HandlerThread:28081 [handler.py:handle_request_defer():170] handle defer: 1
+2023-05-18 23:16:28,440 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: defer
+2023-05-18 23:16:28,440 INFO    SenderThread:28081 [sender.py:send_request_defer():622] handle sender defer: 1
+2023-05-18 23:16:28,440 INFO    SenderThread:28081 [sender.py:transition_state():626] send defer: 2
+2023-05-18 23:16:28,440 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: defer
+2023-05-18 23:16:28,440 INFO    HandlerThread:28081 [handler.py:handle_request_defer():170] handle defer: 2
+2023-05-18 23:16:28,440 INFO    HandlerThread:28081 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-18 23:16:28,441 DEBUG   SystemMonitor:28081 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-18 23:16:28,442 INFO    HandlerThread:28081 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-18 23:16:28,442 DEBUG   SystemMonitor:28081 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-18 23:16:28,442 INFO    HandlerThread:28081 [interfaces.py:finish():202] Joined disk monitor
+2023-05-18 23:16:28,442 DEBUG   SystemMonitor:28081 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-18 23:16:29,250 INFO    HandlerThread:28081 [interfaces.py:finish():202] Joined gpu monitor
+2023-05-18 23:16:29,251 INFO    HandlerThread:28081 [interfaces.py:finish():202] Joined memory monitor
+2023-05-18 23:16:29,251 INFO    HandlerThread:28081 [interfaces.py:finish():202] Joined network monitor
+2023-05-18 23:16:29,252 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: defer
+2023-05-18 23:16:29,252 INFO    SenderThread:28081 [sender.py:send_request_defer():622] handle sender defer: 2
+2023-05-18 23:16:29,252 INFO    SenderThread:28081 [sender.py:transition_state():626] send defer: 3
+2023-05-18 23:16:29,252 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: defer
+2023-05-18 23:16:29,252 INFO    HandlerThread:28081 [handler.py:handle_request_defer():170] handle defer: 3
+2023-05-18 23:16:29,252 DEBUG   SenderThread:28081 [sender.py:send():375] send: stats
+2023-05-18 23:16:29,253 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: defer
+2023-05-18 23:16:29,253 INFO    SenderThread:28081 [sender.py:send_request_defer():622] handle sender defer: 3
+2023-05-18 23:16:29,254 INFO    SenderThread:28081 [sender.py:transition_state():626] send defer: 4
+2023-05-18 23:16:29,254 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: defer
+2023-05-18 23:16:29,254 INFO    HandlerThread:28081 [handler.py:handle_request_defer():170] handle defer: 4
+2023-05-18 23:16:29,254 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: defer
+2023-05-18 23:16:29,254 INFO    SenderThread:28081 [sender.py:send_request_defer():622] handle sender defer: 4
+2023-05-18 23:16:29,254 INFO    SenderThread:28081 [sender.py:transition_state():626] send defer: 5
+2023-05-18 23:16:29,254 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: defer
+2023-05-18 23:16:29,254 INFO    HandlerThread:28081 [handler.py:handle_request_defer():170] handle defer: 5
+2023-05-18 23:16:29,254 DEBUG   SenderThread:28081 [sender.py:send():375] send: summary
+2023-05-18 23:16:29,255 INFO    SenderThread:28081 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-18 23:16:29,255 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: defer
+2023-05-18 23:16:29,255 INFO    SenderThread:28081 [sender.py:send_request_defer():622] handle sender defer: 5
+2023-05-18 23:16:29,255 INFO    SenderThread:28081 [sender.py:transition_state():626] send defer: 6
+2023-05-18 23:16:29,255 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: defer
+2023-05-18 23:16:29,255 INFO    HandlerThread:28081 [handler.py:handle_request_defer():170] handle defer: 6
+2023-05-18 23:16:29,255 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: defer
+2023-05-18 23:16:29,255 INFO    SenderThread:28081 [sender.py:send_request_defer():622] handle sender defer: 6
+2023-05-18 23:16:29,261 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: status_report
+2023-05-18 23:16:29,344 INFO    Thread-12 :28081 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/files/wandb-summary.json
+2023-05-18 23:16:29,436 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: poll_exit
+2023-05-18 23:16:29,586 INFO    SenderThread:28081 [sender.py:transition_state():626] send defer: 7
+2023-05-18 23:16:29,586 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: poll_exit
+2023-05-18 23:16:29,586 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: defer
+2023-05-18 23:16:29,586 INFO    HandlerThread:28081 [handler.py:handle_request_defer():170] handle defer: 7
+2023-05-18 23:16:29,587 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: defer
+2023-05-18 23:16:29,587 INFO    SenderThread:28081 [sender.py:send_request_defer():622] handle sender defer: 7
+2023-05-18 23:16:29,587 INFO    SenderThread:28081 [sender.py:transition_state():626] send defer: 8
+2023-05-18 23:16:29,587 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: defer
+2023-05-18 23:16:29,587 INFO    HandlerThread:28081 [handler.py:handle_request_defer():170] handle defer: 8
+2023-05-18 23:16:29,587 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: defer
+2023-05-18 23:16:29,587 INFO    SenderThread:28081 [sender.py:send_request_defer():622] handle sender defer: 8
+2023-05-18 23:16:29,587 INFO    SenderThread:28081 [sender.py:transition_state():626] send defer: 9
+2023-05-18 23:16:29,587 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: defer
+2023-05-18 23:16:29,588 INFO    HandlerThread:28081 [handler.py:handle_request_defer():170] handle defer: 9
+2023-05-18 23:16:29,588 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: defer
+2023-05-18 23:16:29,588 INFO    SenderThread:28081 [sender.py:send_request_defer():622] handle sender defer: 9
+2023-05-18 23:16:29,588 INFO    SenderThread:28081 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-05-18 23:16:30,344 INFO    Thread-12 :28081 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/files/config.yaml
+2023-05-18 23:16:30,345 INFO    SenderThread:28081 [dir_watcher.py:finish():395] scan: /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/files
+2023-05-18 23:16:30,345 INFO    SenderThread:28081 [dir_watcher.py:finish():409] scan save: /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/files/wandb-metadata.json wandb-metadata.json
+2023-05-18 23:16:30,345 INFO    SenderThread:28081 [dir_watcher.py:finish():409] scan save: /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/files/wandb-summary.json wandb-summary.json
+2023-05-18 23:16:30,345 INFO    SenderThread:28081 [dir_watcher.py:finish():409] scan save: /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/files/requirements.txt requirements.txt
+2023-05-18 23:16:30,346 INFO    SenderThread:28081 [dir_watcher.py:finish():409] scan save: /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/files/config.yaml config.yaml
+2023-05-18 23:16:30,346 INFO    SenderThread:28081 [sender.py:transition_state():626] send defer: 10
+2023-05-18 23:16:30,346 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: defer
+2023-05-18 23:16:30,349 INFO    HandlerThread:28081 [handler.py:handle_request_defer():170] handle defer: 10
+2023-05-18 23:16:30,350 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: defer
+2023-05-18 23:16:30,350 INFO    SenderThread:28081 [sender.py:send_request_defer():622] handle sender defer: 10
+2023-05-18 23:16:30,350 INFO    SenderThread:28081 [file_pusher.py:finish():168] shutting down file pusher
+2023-05-18 23:16:30,437 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: poll_exit
+2023-05-18 23:16:30,437 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: poll_exit
+2023-05-18 23:16:31,110 INFO    wandb-upload_0:28081 [upload_job.py:push():137] Uploaded file /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/files/wandb-summary.json
+2023-05-18 23:16:31,152 INFO    wandb-upload_1:28081 [upload_job.py:push():137] Uploaded file /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/files/requirements.txt
+2023-05-18 23:16:31,253 INFO    wandb-upload_2:28081 [upload_job.py:push():137] Uploaded file /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/files/config.yaml
+2023-05-18 23:16:31,437 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: poll_exit
+2023-05-18 23:16:31,438 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: poll_exit
+2023-05-18 23:16:31,453 INFO    Thread-11 :28081 [sender.py:transition_state():626] send defer: 11
+2023-05-18 23:16:31,454 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: defer
+2023-05-18 23:16:31,454 INFO    HandlerThread:28081 [handler.py:handle_request_defer():170] handle defer: 11
+2023-05-18 23:16:31,454 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: defer
+2023-05-18 23:16:31,454 INFO    SenderThread:28081 [sender.py:send_request_defer():622] handle sender defer: 11
+2023-05-18 23:16:31,454 INFO    SenderThread:28081 [file_pusher.py:join():173] waiting for file pusher
+2023-05-18 23:16:31,454 INFO    SenderThread:28081 [sender.py:transition_state():626] send defer: 12
+2023-05-18 23:16:31,454 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: defer
+2023-05-18 23:16:31,455 INFO    HandlerThread:28081 [handler.py:handle_request_defer():170] handle defer: 12
+2023-05-18 23:16:31,455 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: defer
+2023-05-18 23:16:31,455 INFO    SenderThread:28081 [sender.py:send_request_defer():622] handle sender defer: 12
+2023-05-18 23:16:32,438 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: poll_exit
+2023-05-18 23:16:33,439 INFO    SenderThread:28081 [sender.py:transition_state():626] send defer: 13
+2023-05-18 23:16:33,440 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: poll_exit
+2023-05-18 23:16:33,440 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: defer
+2023-05-18 23:16:33,440 INFO    HandlerThread:28081 [handler.py:handle_request_defer():170] handle defer: 13
+2023-05-18 23:16:33,441 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: defer
+2023-05-18 23:16:33,441 INFO    SenderThread:28081 [sender.py:send_request_defer():622] handle sender defer: 13
+2023-05-18 23:16:33,441 INFO    SenderThread:28081 [sender.py:transition_state():626] send defer: 14
+2023-05-18 23:16:33,441 DEBUG   SenderThread:28081 [sender.py:send():375] send: final
+2023-05-18 23:16:33,441 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: defer
+2023-05-18 23:16:33,441 DEBUG   SenderThread:28081 [sender.py:send():375] send: footer
+2023-05-18 23:16:33,442 INFO    HandlerThread:28081 [handler.py:handle_request_defer():170] handle defer: 14
+2023-05-18 23:16:33,442 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: defer
+2023-05-18 23:16:33,442 INFO    SenderThread:28081 [sender.py:send_request_defer():622] handle sender defer: 14
+2023-05-18 23:16:33,443 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: poll_exit
+2023-05-18 23:16:33,444 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: server_info
+2023-05-18 23:16:33,444 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: get_summary
+2023-05-18 23:16:33,444 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: sampled_history
+2023-05-18 23:16:33,444 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: poll_exit
+2023-05-18 23:16:33,445 DEBUG   SenderThread:28081 [sender.py:send_request():402] send_request: server_info
+2023-05-18 23:16:33,975 DEBUG   HandlerThread:28081 [handler.py:handle_request():144] handle_request: shutdown
+2023-05-18 23:16:33,975 INFO    HandlerThread:28081 [handler.py:finish():845] shutting down handler
+2023-05-18 23:16:34,445 INFO    WriterThread:28081 [datastore.py:close():298] close: /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_231528-xt58xh59/run-xt58xh59.wandb
+2023-05-18 23:16:34,974 INFO    SenderThread:28081 [sender.py:finish():1550] shutting down sender
+2023-05-18 23:16:34,974 INFO    SenderThread:28081 [file_pusher.py:finish():168] shutting down file pusher
+2023-05-18 23:16:34,974 INFO    SenderThread:28081 [file_pusher.py:join():173] waiting for file pusher

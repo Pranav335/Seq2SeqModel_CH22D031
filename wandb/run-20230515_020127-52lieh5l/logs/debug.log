@@ -1,0 +1,25 @@
+2023-05-15 02:01:27,344 INFO    Thread-2  :1216750 [wandb_setup.py:_flush():76] Configure stats pid to 1216750
+2023-05-15 02:01:27,344 INFO    Thread-2  :1216750 [wandb_setup.py:_flush():76] Loading settings from /home/asus/.config/wandb/settings
+2023-05-15 02:01:27,345 INFO    Thread-2  :1216750 [wandb_setup.py:_flush():76] Loading settings from /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/settings
+2023-05-15 02:01:27,345 INFO    Thread-2  :1216750 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'project': 'Assignment-3', 'entity': 'pranav_', 'root_dir': '/home/asus/Pranav_Folder/Seq2SeqModel_CH22D031', 'sweep_id': 'coa8t029', 'run_id': '52lieh5l', 'sweep_param_path': '/home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/sweep-coa8t029/config-52lieh5l.yaml'}
+2023-05-15 02:01:27,345 INFO    Thread-2  :1216750 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-05-15 02:01:27,345 INFO    Thread-2  :1216750 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'batching_with_accuracy.py', 'program': 'batching_with_accuracy.py'}
+2023-05-15 02:01:27,345 INFO    Thread-2  :1216750 [wandb_init.py:_log_setup():507] Logging user logs to /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230515_020127-52lieh5l/logs/debug.log
+2023-05-15 02:01:27,345 INFO    Thread-2  :1216750 [wandb_init.py:_log_setup():508] Logging internal logs to /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230515_020127-52lieh5l/logs/debug-internal.log
+2023-05-15 02:01:27,345 INFO    Thread-2  :1216750 [wandb_init.py:init():547] calling init triggers
+2023-05-15 02:01:27,345 INFO    Thread-2  :1216750 [wandb_init.py:init():554] wandb.init called with sweep_config: {'bid': True, 'cell_type': 'RNN', 'dropout': 0.5, 'embedding_size': 64, 'epoch': 50, 'hidden_size': 128, 'lr': 0.001, 'num_layer': 1}
+config: {'method': 'grid', 'name': 'Loss', 'metric': {'goal': 'maximize', 'name': 'validation_accuracy'}, 'parameters': {'hidden_size': {'values': [128, 256]}, 'num_layer': {'values': [1, 2, 3, 4, 5]}, 'embedding_size': {'values': [64, 128, 256]}, 'cell_type': {'values': ['RNN', 'GRU', 'LSTM']}, 'bid': {'values': [True, False]}, 'dropout': {'values': [0.5, 0.7, 0.2]}, 'epoch': {'values': [50, 40]}, 'lr': {'values': [0.001, 0.01, 0.001]}}}
+2023-05-15 02:01:27,345 INFO    Thread-2  :1216750 [wandb_init.py:init():595] starting backend
+2023-05-15 02:01:27,345 INFO    Thread-2  :1216750 [wandb_init.py:init():599] setting up manager
+2023-05-15 02:01:27,350 INFO    Thread-2  :1216750 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-05-15 02:01:27,354 INFO    Thread-2  :1216750 [wandb_init.py:init():605] backend started and connected
+2023-05-15 02:01:27,356 INFO    Thread-2  :1216750 [wandb_run.py:_config_callback():1285] config_cb None None {'bid': True, 'cell_type': 'RNN', 'dropout': 0.5, 'embedding_size': 64, 'epoch': 50, 'hidden_size': 128, 'lr': 0.001, 'num_layer': 1}
+2023-05-15 02:01:27,358 INFO    Thread-2  :1216750 [wandb_init.py:init():695] updated telemetry
+2023-05-15 02:01:27,377 INFO    Thread-2  :1216750 [wandb_init.py:init():732] communicating run to backend with 60.0 second timeout
+2023-05-15 02:01:28,051 INFO    Thread-2  :1216750 [wandb_run.py:_on_init():2176] communicating current version
+2023-05-15 02:01:28,350 INFO    Thread-2  :1216750 [wandb_run.py:_on_init():2185] got version response upgrade_message: "wandb version 0.15.2 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-05-15 02:01:28,350 INFO    Thread-2  :1216750 [wandb_init.py:init():782] starting run threads in backend
+2023-05-15 02:01:28,466 INFO    Thread-2  :1216750 [wandb_run.py:_console_start():2157] atexit reg
+2023-05-15 02:01:28,466 INFO    Thread-2  :1216750 [wandb_run.py:_redirect():2012] redirect: SettingsConsole.OFF
+2023-05-15 02:01:28,467 INFO    Thread-2  :1216750 [wandb_init.py:init():824] run started, returning control to user process

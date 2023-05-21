@@ -1,0 +1,29 @@
+2023-05-19 13:32:24,897 INFO    Thread-2  :70789 [wandb_setup.py:_flush():76] Configure stats pid to 70789
+2023-05-19 13:32:24,897 INFO    Thread-2  :70789 [wandb_setup.py:_flush():76] Loading settings from /home/asus/.config/wandb/settings
+2023-05-19 13:32:24,898 INFO    Thread-2  :70789 [wandb_setup.py:_flush():76] Loading settings from /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/settings
+2023-05-19 13:32:24,898 INFO    Thread-2  :70789 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'project': 'Assignment-3', 'entity': 'pranav_', 'root_dir': '/home/asus/Pranav_Folder/Seq2SeqModel_CH22D031', 'sweep_id': 'oberm9ok', 'run_id': 'naobhbie', 'sweep_param_path': '/home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/sweep-oberm9ok/config-naobhbie.yaml'}
+2023-05-19 13:32:24,898 INFO    Thread-2  :70789 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-05-19 13:32:24,898 INFO    Thread-2  :70789 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'batching_with_accuracy.py', 'program': 'batching_with_accuracy.py'}
+2023-05-19 13:32:24,898 INFO    Thread-2  :70789 [wandb_init.py:_log_setup():507] Logging user logs to /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230519_133224-naobhbie/logs/debug.log
+2023-05-19 13:32:24,898 INFO    Thread-2  :70789 [wandb_init.py:_log_setup():508] Logging internal logs to /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230519_133224-naobhbie/logs/debug-internal.log
+2023-05-19 13:32:24,898 INFO    Thread-2  :70789 [wandb_init.py:init():547] calling init triggers
+2023-05-19 13:32:24,898 INFO    Thread-2  :70789 [wandb_init.py:init():554] wandb.init called with sweep_config: {'bid': False, 'cell_type': 'LSTM', 'dropout': 0, 'embedding_size': 300, 'epoch': 20, 'hidden_size': 512, 'lr': 0.001, 'num_layer': 3}
+config: {'method': 'random', 'name': 'Loss', 'metric': {'goal': 'maximize', 'name': 'validation_accuracy'}, 'parameters': {'hidden_size': {'values': [512]}, 'num_layer': {'values': [3]}, 'embedding_size': {'values': [300]}, 'cell_type': {'values': ['LSTM']}, 'bid': {'values': [False]}, 'dropout': {'values': [0]}, 'epoch': {'values': [20]}, 'lr': {'values': [0.001]}}}
+2023-05-19 13:32:24,898 INFO    Thread-2  :70789 [wandb_init.py:init():595] starting backend
+2023-05-19 13:32:24,898 INFO    Thread-2  :70789 [wandb_init.py:init():599] setting up manager
+2023-05-19 13:32:24,906 INFO    Thread-2  :70789 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-05-19 13:32:24,915 INFO    Thread-2  :70789 [wandb_init.py:init():605] backend started and connected
+2023-05-19 13:32:24,920 INFO    Thread-2  :70789 [wandb_run.py:_config_callback():1285] config_cb None None {'bid': False, 'cell_type': 'LSTM', 'dropout': 0, 'embedding_size': 300, 'epoch': 20, 'hidden_size': 512, 'lr': 0.001, 'num_layer': 3}
+2023-05-19 13:32:24,921 INFO    Thread-2  :70789 [wandb_init.py:init():695] updated telemetry
+2023-05-19 13:32:24,945 INFO    Thread-2  :70789 [wandb_init.py:init():732] communicating run to backend with 60.0 second timeout
+2023-05-19 13:32:25,600 INFO    Thread-2  :70789 [wandb_run.py:_on_init():2176] communicating current version
+2023-05-19 13:32:25,685 INFO    Thread-2  :70789 [wandb_run.py:_on_init():2185] got version response upgrade_message: "wandb version 0.15.3 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-05-19 13:32:25,686 INFO    Thread-2  :70789 [wandb_init.py:init():782] starting run threads in backend
+2023-05-19 13:32:25,922 INFO    Thread-2  :70789 [wandb_run.py:_console_start():2157] atexit reg
+2023-05-19 13:32:25,922 INFO    Thread-2  :70789 [wandb_run.py:_redirect():2012] redirect: SettingsConsole.OFF
+2023-05-19 13:32:25,922 INFO    Thread-2  :70789 [wandb_init.py:init():824] run started, returning control to user process
+2023-05-19 13:57:59,001 INFO    Thread-2  :70789 [wandb_run.py:_finish():1892] finishing run pranav_/Assignment-3/naobhbie
+2023-05-19 13:57:59,001 INFO    Thread-2  :70789 [wandb_run.py:_atexit_cleanup():2126] got exitcode: 0
+2023-05-19 13:57:59,002 INFO    Thread-2  :70789 [wandb_run.py:_restore():2109] restore
+2023-05-19 13:57:59,002 INFO    Thread-2  :70789 [wandb_run.py:_restore():2115] restore done

@@ -1,0 +1,29 @@
+2023-05-18 22:43:27,104 INFO    Thread-6  :2932081 [wandb_setup.py:_flush():76] Configure stats pid to 2932081
+2023-05-18 22:43:27,104 INFO    Thread-6  :2932081 [wandb_setup.py:_flush():76] Loading settings from /home/asus/.config/wandb/settings
+2023-05-18 22:43:27,104 INFO    Thread-6  :2932081 [wandb_setup.py:_flush():76] Loading settings from /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/settings
+2023-05-18 22:43:27,104 INFO    Thread-6  :2932081 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'project': 'Assignment-3', 'entity': 'pranav_', 'root_dir': '/home/asus/Pranav_Folder/Seq2SeqModel_CH22D031', 'run_id': 'ywte78m1', 'sweep_param_path': '/home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/sweep-y8yivfta/config-ywte78m1.yaml', 'sweep_id': 'y8yivfta'}
+2023-05-18 22:43:27,104 INFO    Thread-6  :2932081 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-05-18 22:43:27,104 INFO    Thread-6  :2932081 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'batching_with_accuracy.py', 'program': 'batching_with_accuracy.py'}
+2023-05-18 22:43:27,104 INFO    Thread-6  :2932081 [wandb_init.py:_log_setup():507] Logging user logs to /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_224327-ywte78m1/logs/debug.log
+2023-05-18 22:43:27,104 INFO    Thread-6  :2932081 [wandb_init.py:_log_setup():508] Logging internal logs to /home/asus/Pranav_Folder/Seq2SeqModel_CH22D031/wandb/run-20230518_224327-ywte78m1/logs/debug-internal.log
+2023-05-18 22:43:27,104 INFO    Thread-6  :2932081 [wandb_init.py:init():547] calling init triggers
+2023-05-18 22:43:27,104 INFO    Thread-6  :2932081 [wandb_init.py:init():554] wandb.init called with sweep_config: {'bid': True, 'cell_type': 'RNN', 'dropout': 0.5, 'embedding_size': 100, 'epoch': 20, 'hidden_size': 128, 'lr': 0.001, 'num_layer': 2}
+config: {'method': 'grid', 'name': 'Loss', 'metric': {'goal': 'maximize', 'name': 'validation_accuracy'}, 'parameters': {'hidden_size': {'values': [128, 256, 512]}, 'num_layer': {'values': [1, 2, 3, 4]}, 'embedding_size': {'values': [100, 200, 300]}, 'cell_type': {'values': ['RNN', 'GRU', 'LSTM']}, 'bid': {'values': [True, False]}, 'dropout': {'values': [0.5, 0.7, 0.2]}, 'epoch': {'values': [20, 30]}, 'lr': {'values': [0.001, 0.01]}}}
+2023-05-18 22:43:27,105 INFO    Thread-6  :2932081 [wandb_init.py:init():595] starting backend
+2023-05-18 22:43:27,105 INFO    Thread-6  :2932081 [wandb_init.py:init():599] setting up manager
+2023-05-18 22:43:27,110 INFO    Thread-6  :2932081 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-05-18 22:43:27,113 INFO    Thread-6  :2932081 [wandb_init.py:init():605] backend started and connected
+2023-05-18 22:43:27,116 INFO    Thread-6  :2932081 [wandb_run.py:_config_callback():1285] config_cb None None {'bid': True, 'cell_type': 'RNN', 'dropout': 0.5, 'embedding_size': 100, 'epoch': 20, 'hidden_size': 128, 'lr': 0.001, 'num_layer': 2}
+2023-05-18 22:43:27,117 INFO    Thread-6  :2932081 [wandb_init.py:init():695] updated telemetry
+2023-05-18 22:43:27,146 INFO    Thread-6  :2932081 [wandb_init.py:init():732] communicating run to backend with 60.0 second timeout
+2023-05-18 22:43:27,769 INFO    Thread-6  :2932081 [wandb_run.py:_on_init():2176] communicating current version
+2023-05-18 22:43:27,844 INFO    Thread-6  :2932081 [wandb_run.py:_on_init():2185] got version response upgrade_message: "wandb version 0.15.3 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-05-18 22:43:27,844 INFO    Thread-6  :2932081 [wandb_init.py:init():782] starting run threads in backend
+2023-05-18 22:43:27,959 INFO    Thread-6  :2932081 [wandb_run.py:_console_start():2157] atexit reg
+2023-05-18 22:43:27,959 INFO    Thread-6  :2932081 [wandb_run.py:_redirect():2012] redirect: SettingsConsole.OFF
+2023-05-18 22:43:27,960 INFO    Thread-6  :2932081 [wandb_init.py:init():824] run started, returning control to user process
+2023-05-18 22:43:27,982 INFO    Thread-6  :2932081 [wandb_run.py:_finish():1892] finishing run pranav_/Assignment-3/ywte78m1
+2023-05-18 22:43:27,982 INFO    Thread-6  :2932081 [wandb_run.py:_atexit_cleanup():2126] got exitcode: 1
+2023-05-18 22:43:27,982 INFO    Thread-6  :2932081 [wandb_run.py:_restore():2109] restore
+2023-05-18 22:43:27,982 INFO    Thread-6  :2932081 [wandb_run.py:_restore():2115] restore done
