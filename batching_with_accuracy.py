@@ -455,6 +455,11 @@ import torch.optim as optim
 
 def number2word(predicted_output, target_tensor, lang = hindi):
     
+    ''' Convert the predicted number to letters by indexing it from the source 
+    dictionary.
+    It output the list of tuple where elements of tuple are predicted output and 
+    true output'''
+    
     mask = torch.all(predicted_output == target_tensor, dim = 1)
     correct_output = predicted_output[mask, :]
     true_output = target_tensor[mask, :]
@@ -476,6 +481,8 @@ def number2word(predicted_output, target_tensor, lang = hindi):
 def train(input_tensor, target_tensor, encoder, decoder,
               encoder_optimizer, decoder_optimizer, criterion,
               teacher_forcing = True, lang = hindi, verbose = False):
+    ''' Train the model for the given batch return the loss, total number of correct 
+    words and total number of correct letters'''
     
     encoder_hidden = encoder.initHidden()
     
@@ -580,7 +587,8 @@ from tqdm import tqdm
 def trainiter(encoder, decoder, dataloader,
               learning_rate = 0.01, epochs = 10):
     
-    
+    ''' This model uses train function to train each of data and calculate the overall
+    word accuracy for the training data'''
     
     encoder_optimizer = optim.NAdam(encoder.parameters(), lr = learning_rate)
     decoder_optimizer = optim.NAdam(decoder.parameters(), lr = learning_rate)
@@ -633,6 +641,8 @@ def trainiter(encoder, decoder, dataloader,
 # %%---------------------------------- Accuracy -------------------------------
 
 def accuracy(dataloader, encoder, decoder):
+    ''' Moodel giives the acccuracy on the dataloader for the trained encoder 
+    and decoder'''
     
     word_accuracy = 0
     
