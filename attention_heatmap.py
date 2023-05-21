@@ -164,6 +164,8 @@ def inference(encoder, decoder, dataloader):
                     
 inference(encoder, decoder, test_dataloader)
 
+
+## Generate attention heatmap on one batch of test data.
      
 i, t = next(iter(test_dataloader))
 

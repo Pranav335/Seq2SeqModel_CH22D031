@@ -4,6 +4,7 @@ import torch
 import torch.nn
 
 import pdb
+# This  script loads the trained vanilla encoder-decoder model
 
 print(english.n_letters)
 
@@ -39,10 +40,12 @@ from batching_with_accuracy import accuracy
 encoder = encoder.to(device)
 decoder = decoder.to(device)
 
+# Print accuracy on the test dataloader
+
 print(accuracy(test_dataloader, encoder, decoder))
 
 
-
+# converting predicted tensors to word representations
 def number2word(predicted_output, target_tensor, lang = hindi):
     predicted = []
     for row, row1 in zip(predicted_output, target_tensor):
@@ -160,6 +163,7 @@ def inference(encoder, decoder, dataloader):
     
 #inference(encoder, decoder, test_dataloader)
 
+## visualizing the output in the grid using subplots.
 i,t = next(iter(test_dataloader))
 input_english_word = []
 for row in i:
@@ -189,9 +193,4 @@ fig.subplots_adjust(wspace=0.2, hspace=0.2)
                         
                         
                         
-                        
-    
-    
-    
-#i, t = next(iter(test_dataloader))
-#print(prediction(i,t, encoder, decoder))
+                    
